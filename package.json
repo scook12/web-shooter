@@ -1,0 +1,28 @@
+{
+  "name": "web-shooter",
+  "version": "0.0.1",
+  "description": "A web application for auto-uploading and performing QA/QC on photos taken with compatible Canon cameras.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scook12/web-shooter.git"
+  },
+  "keywords": [
+    "canon",
+    "photos",
+    "cloud"
+  ],
+  "author": "sam, enoch, kieu, justin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scook12/web-shooter/issues"
+  },
+  "homepage": "https://github.com/scook12/web-shooter#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "filestack-js": "^3.9.0"
+  }
+}
