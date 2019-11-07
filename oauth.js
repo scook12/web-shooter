@@ -3,6 +3,7 @@
 const {google} = require('googleapis');
 const fs = require('fs');
 const path = require('path');
+const session = require('express-session')
 
 /**
  * To use OAuth2 authentication, we need access to a a CLIENT_ID, CLIENT_SECRET, AND REDIRECT_URI.  To get these credentials for your application, visit https://console.cloud.google.com/apis/credentials.
@@ -34,12 +35,12 @@ function requestAuth(req, res, next) {
   res.redirect(authUrl)
 };
 
+async function saveToken() {}
+
 async function acceptAuth(req, res, next) {
   const {tokens} = await oauth2Client.getToken(req.query.code);
-  console.log(req.query)
-  console.log(tokens)
-  oauth2Client.credentials = tokens
-  // save the tokens??
+  // put the credentials in the session
+  req.session.credentials = tokens
   res.redirect('/settings')
 }
 

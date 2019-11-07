@@ -23,6 +23,7 @@
   "homepage": "https://github.com/scook12/web-shooter#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "filestack-js": "^3.9.0",
     "googleapis": "^45.0.0"
   }
