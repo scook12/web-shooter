@@ -4,11 +4,17 @@
 const fs = require("fs");
 const path = require("path");
 const chokidar = require("chokidar");
+const express = require("express");
+const app = express();
+const session = require("express-session");
 const log = console.log.bind(console);
+
+// initialize app
+app.use(session({secret:"super_secret_key"}));
 
 // initialize filestack
 const options = {
-    accept: "image/*",
+    accept: "image/jpg",
     fromSources: ['local_file_system'],
     maxSize: 1024 * 1024,
     maxFiles: 40
@@ -19,24 +25,38 @@ const local_path = "/Users/sam10266/Documents/Projects/web-shooter/data" // shou
 // initialize watcher
 const watcher = chokidar.watch(local_path, {
     persistent: true,
-    ignoreInitial: true
+    ignoreInitial: false
 });
+
+const handles = [];
 
 // handle events
 watcher
   .on("add", (filepath, stats) => {
       log("New file(s) detected...");
       if (filepath.startsWith(".") ){
+          log("Skipping invalid file...");
           return true; // skipping .ds_store and other . files
       }
       log("Uploading file: ", filepath);
+
       client.upload(filepath).then(
         function(result) {
-            console.log(result);
+            log(result);
+            handles.push(result["handle"]);
         },
         function(error){
-            console.log(error);
+            log(error);
         }
     );
     watcher.unwatch(filepath);
 });
+
+async function storeHandles(req, res, next){
+    if (handles) {
+        req.session.handles = handles;
+    }
+    res.redirect('/gallery')
+}
+
+module.exports = {storeHandles}
