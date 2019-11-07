@@ -1,24 +1,27 @@
 {
   "name": "web-shooter",
-  "version": "0.0.1",
-  "description": "A web application for auto-uploading and performing QA/QC on photos taken with compatible Canon cameras.",
-  "main": "main.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/scook12/web-shooter.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "canon",
-    "photos",
-    "cloud"
-  ],
-  "author": "sam, enoch, kieu, justin",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/scook12/web-shooter/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "homepage": "https://github.com/scook12/web-shooter#readme",
   "dependencies": {
@@ -26,6 +29,14 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "filestack-js": "^3.9.0",
-    "googleapis": "^45.0.0"
+    "googleapis": "^45.0.0",
+    "@react-native-community/google-signin": "^3.0.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-google-button": "^0.5.3",
+    "react-scripts": "3.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.0"
   }
 }
