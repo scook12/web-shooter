@@ -1,0 +1,47 @@
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: white;
+}
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.size {
+  max-height: 100px;
+}
+
+.body-text {
+  font-family: 'Poppins', sans-serif;
+  color: red;
+}
+
+.iphone {
+  margin-left: 2%;
+  max-height: 500px;
+}
+
+.logo {
+  margin-left: -5%;
+}
+
+.gallery {
+  max-height: 400px;
+}
+
+.sub-title {
+  margin-top: 2%;
+  margin-bottom: 4%;
+  font-size: 1.2em;
+  color: black;
+}
+
+.bg-footer {
+  color: white !important;
+  background-color: black;
+}
