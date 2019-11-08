@@ -1,8 +1,6 @@
 // this module watches a directory for new and automatically uploads images from 
 // local storage to an s3 bucket registered with filestack
 
-const fs = require("fs");
-const path = require("path");
 const chokidar = require("chokidar");
 const express = require("express");
 const app = express();
